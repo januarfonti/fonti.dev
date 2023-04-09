@@ -10,6 +10,7 @@ import Link from "next/link"
 import { absoluteUrl, formatDate } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import DisqusComments from "@/components/disqus"
+import { Skeleton } from "@/components/ui/skeleton"
 
 interface PostPageProps {
   params: {

@@ -3,6 +3,7 @@
 import { YouTubeEmbed } from 'react-social-media-embed';
 import { InstagramEmbed } from 'react-social-media-embed';
 import { TwitterEmbed } from 'react-social-media-embed';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 interface SocialMediaEmbedProps {
   url: string;
@@ -11,7 +12,11 @@ interface SocialMediaEmbedProps {
 
 export function SocialMediaEmbed({ url, type }) {
   if (type === 'youtube') {
-    return <YouTubeEmbed url={url} />
+    return (
+      <>
+        <YouTubeEmbed url={url} width="100%" />
+      </>
+    )
   } else if (type === 'instagram') {
     return <InstagramEmbed url={url} />
   } else if (type === 'twitter') {
