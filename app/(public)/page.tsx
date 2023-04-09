@@ -22,7 +22,7 @@ export default async function IndexPage() {
           </p>
         </div>
         <div className="flex">
-          <Link href="/about" className={cn(buttonVariants({ size: "lg" }))}>
+          <Link href="/about" className={cn(buttonVariants({ size: "lg" }), 'umami--click--homepage-about-link')}>
             Who am I?
           </Link>
         </div>

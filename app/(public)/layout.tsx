@@ -22,6 +22,7 @@ export default async function MarketingLayout({
               href="https://instagram.com/januarfonti"
               target="_blank"
               rel="noreferrer"
+              className="umami--click--header-instagram-link"
             >
               <Icons.instagram className="h-5 w-5" />
             </Link>
@@ -29,13 +30,15 @@ export default async function MarketingLayout({
               href="https://www.linkedin.com/in/januarfonti/"
               target="_blank"
               rel="noreferrer"
+              className="umami--click--header-linkedin-link"
             >
               <Icons.linkedIn className="h-5 w-5" />
             </Link>
             <Link
-              href="https://twitter.com/kklapauciuss"
+              href="https://twitter.com/januarfonti"
               target="_blank"
               rel="noreferrer"
+              className="umami--click--header-twitter-link"
             >
               <Icons.twitter className="h-5 w-5" />
             </Link>
