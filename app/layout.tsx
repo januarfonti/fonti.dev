@@ -6,6 +6,7 @@ import { absoluteUrl, cn } from "@/lib/utils"
 import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { Toaster } from "@/components/ui/toaster"
+import Script from 'next/script'
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Toaster />
         <TailwindIndicator />
       </body>
+      <Script async defer data-website-id="a762aae4-2cae-4313-8b28-6a6f786c2124" src="https://analytics.fonti.dev/umami.js" strategy="lazyOnload" />
     </html>
   )
 }
