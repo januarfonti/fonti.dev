@@ -13,7 +13,7 @@ export function SiteFooter() {
               href={siteConfig.links.twitter}
               target="_blank"
               rel="noreferrer"
-              className="font-medium underline underline-offset-4"
+              className="umami--click--footer-twitter-link font-medium underline underline-offset-4"
             >
               Fonti
             </a>
@@ -22,7 +22,7 @@ export function SiteFooter() {
               href="https://vercel.com"
               target="_blank"
               rel="noreferrer"
-              className="font-medium underline underline-offset-4"
+              className="umami--click--footer-vercel-link font-medium underline underline-offset-4"
             >
               Vercel
             </a>
@@ -31,7 +31,7 @@ export function SiteFooter() {
               href="https://undraw.co/"
               target="_blank"
               rel="noreferrer"
-              className="font-medium underline underline-offset-4"
+              className="umami--click--footer-undraw-link font-medium underline underline-offset-4"
             >
               unDraw
             </a>

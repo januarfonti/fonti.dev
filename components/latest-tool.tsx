@@ -19,7 +19,7 @@ function LatestTool() {
       {posts?.length ? (
         <section className="grid gap-10 sm:grid-cols-2 md:max-w-[52rem]">
           {posts.map((post, index) => (
-            <Link href={post.slug} key={post._id}>
+            <Link href={post.slug} key={post._id} className='umami--click--tools-detail-link'>
               <article
                 className="group relative flex flex-col space-y-2 rounded-md border border-slate-200 p-6 transition-colors hover:border-slate-900"
               >
@@ -32,7 +32,7 @@ function LatestTool() {
           ))}
         </section>
       ) : (
-        <p>No posts published.</p>
+        <p>No tools published.</p>
       )}
     </>
   )
