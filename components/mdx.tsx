@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Callout } from "@/components/callout"
 import { Card } from "@/components/card"
 import { TextConverter } from "@/components/playground/text-converter"
+import { SocialMediaEmbed } from "@/components/social-media-embed"
 
 const components = {
   h1: ({ className, ...props }) => (
@@ -164,6 +165,7 @@ const components = {
   Callout,
   Card,
   TextConverter,
+  SocialMediaEmbed
 }
 
 interface MdxProps {
