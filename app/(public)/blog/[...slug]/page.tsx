@@ -9,6 +9,7 @@ import Link from "next/link"
 
 import { absoluteUrl, formatDate } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import DisqusComments from "@/components/disqus"
 
 interface PostPageProps {
   params: {
@@ -148,6 +149,8 @@ export default async function PostPage({ params }: PostPageProps) {
         />
       )}
       <Mdx code={post.body.code} />
+      <hr className="my-4 border-slate-200" />
+      <DisqusComments post={post} />
       <hr className="my-4 border-slate-200" />
       <div className="flex justify-center py-6 lg:py-10">
         <Link
