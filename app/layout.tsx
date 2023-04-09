@@ -3,7 +3,6 @@ import { Inter as FontSans } from "next/font/google"
 import "@/styles/globals.css"
 import { siteConfig } from "@/config/site"
 import { absoluteUrl, cn } from "@/lib/utils"
-import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { Toaster } from "@/components/ui/toaster"
 import Script from 'next/script'
@@ -86,7 +85,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body className="min-h-screen">
         {children}
-        <Analytics />
         <Toaster />
         <TailwindIndicator />
       </body>
