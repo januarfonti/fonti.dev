@@ -10,9 +10,10 @@ import { Icons } from "@/components/icons"
 interface MobileNavProps {
   items: MainNavItem[]
   children?: React.ReactNode
+  handleShowMobileMenu: () => void
 }
 
-export function MobileNav({ items, children }: MobileNavProps) {
+export function MobileNav({ items, handleShowMobileMenu, children }: MobileNavProps) {
   useLockBody()
 
   return (
@@ -25,7 +26,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
         <Link href="/" className="flex items-center space-x-2">
           <Icons.logo className="h-6 w-6" />
           <span className="font-bold">{siteConfig.name}</span>
-        </Link>
+      </Link>
         <nav className="grid grid-flow-row auto-rows-max text-sm">
           {items.map((item, index) => (
             <Link
@@ -35,6 +36,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
                 "flex w-full items-center rounded-md p-2 text-sm font-medium hover:underline",
                 item.disabled && "cursor-not-allowed opacity-60"
               )}
+              onClick={handleShowMobileMenu}
             >
               {item.title}
             </Link>
