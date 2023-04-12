@@ -4,7 +4,6 @@ import { playgroundsConfig } from "@/config/playgrounds"
 import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
-import { PlaygroundsSearch } from "@/components/search"
 import { PlaygroundsSidebarNav } from "@/components/sidebar-nav"
 import { SiteFooter } from "@/components/site-footer"
 import { publicConfig } from "@/config/public"
@@ -21,21 +20,6 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
           <MainNav items={publicConfig.mainNav}>
             <PlaygroundsSidebarNav items={playgroundsConfig.sidebarNav} />
           </MainNav>
-          <div className="flex flex-1 items-center space-x-4 sm:justify-end">
-            <div className="flex-1 sm:grow-0">
-              <PlaygroundsSearch />
-            </div>
-            <nav className="flex space-x-4">
-              <Link
-                href={siteConfig.links.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Icons.gitHub className="h-7 w-7" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-            </nav>
-          </div>
         </div>
       </header>
       <div className="container flex-1">{children}</div>

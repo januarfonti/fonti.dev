@@ -23,7 +23,7 @@ export function MobileNav({ items, handleShowMobileMenu, children }: MobileNavPr
       )}
     >
       <div className="relative z-20 grid gap-6 rounded-md bg-white p-4 shadow-md">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2" onClick={handleShowMobileMenu}>
           <Icons.logo className="h-6 w-6" />
           <span className="font-bold">{siteConfig.name}</span>
       </Link>
