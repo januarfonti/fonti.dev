@@ -3,11 +3,19 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import Typing from "@/components/typing"
-import LatestPost from "@/components/latest-post"
 import LatestTool from "@/components/latest-tool"
 
+import { allPosts } from "contentlayer/generated"
+import { compareDesc } from "date-fns"
+import { PostItem } from "@/components/post-item"
+
 export default async function IndexPage() {
-  
+  const posts = allPosts
+    .filter((post) => post.published)
+    .slice(0, 4)
+    .sort((a, b) => {
+      return compareDesc(new Date(a.date), new Date(b.date))
+    })
 
   return (
     <>
@@ -37,7 +45,15 @@ export default async function IndexPage() {
             I&apos;ve been writing about my journey as a developer, and I&apos;ve also been sharing some of my notes and resources.
           </p>
         </div>
-        <LatestPost />
+        {posts?.length ? (
+        <section className="grid gap-10 sm:grid-cols-2 md:max-w-[52rem]">
+          {posts.map((post, index) => (
+            <PostItem key={post.slug} post={post} index={index} />
+          ))}
+        </section>
+      ) : (
+        <p>No posts published.</p>
+      )}
       </section>
       <hr className="border-slate-200" />
       <section className="container grid justify-center gap-6 py-8 md:py-12 lg:py-24">

@@ -7,7 +7,7 @@
     "url": "https://twitter.com/januarfonti"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "contentlayer dev & next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

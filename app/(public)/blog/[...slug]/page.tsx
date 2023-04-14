@@ -144,7 +144,7 @@ export default async function PostPage({ params }: PostPageProps) {
           alt={post.title}
           width={720}
           height={405}
-          className="my-8 rounded-md border border-slate-200 bg-slate-200 transition-colors group-hover:border-slate-900"
+          className="my-8 w-auto rounded-md border border-slate-200 bg-slate-200 transition-colors group-hover:border-slate-900"
           priority
         />
       )}
