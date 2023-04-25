@@ -22,9 +22,9 @@ export function PostItem({ post, index }: PostItemProps) {
         />
       )}
       <h2 className="text-xl font-extrabold md:text-2xl">{post.title}</h2>
-      {post.description && <p className="text-slate-600">{post.description}</p>}
+      {post.description && <p className="text-muted-foreground">{post.description}</p>}
       {post.date && (
-        <p className="text-sm text-slate-600">{formatDate(post.date)}</p>
+        <p className="text-sm text-muted-foreground">{formatDate(post.date)}</p>
       )}
       <Link href={post.slug} className="umami--click--blog-detail-link absolute inset-0">
         <span className="sr-only">View Article</span>

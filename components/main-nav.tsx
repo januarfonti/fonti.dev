@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 import { MobileNav } from "@/components/mobile-nav"
+import { useTheme } from "next-themes"
 
 interface MainNavProps {
   items?: MainNavItem[]
@@ -18,7 +19,7 @@ interface MainNavProps {
 export function MainNav({ items, children }: MainNavProps) {
   const segment = useSelectedLayoutSegment()
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false)
-
+  const { theme } = useTheme()
   const handleShowMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu)
   }
@@ -26,7 +27,11 @@ export function MainNav({ items, children }: MainNavProps) {
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <Icons.logo className="h-6 w-6" />
+        {theme === "dark" ? (
+          <Icons.logoDark className="h-6 w-6" />
+        ) : (
+          <Icons.logo className="h-6 w-6" />
+        )}
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
@@ -38,8 +43,8 @@ export function MainNav({ items, children }: MainNavProps) {
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "flex items-center text-lg font-semibold text-slate-600 sm:text-sm",
-                item.href.startsWith(`/${segment}`) && "text-slate-900",
+                "flex items-center text-lg font-semibold sm:text-sm",
+                item.href.startsWith(`/${segment}`) && "text-muted-foreground",
                 item.disabled && "cursor-not-allowed opacity-80"
               )}
             >

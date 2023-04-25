@@ -6,6 +6,7 @@ import { absoluteUrl, cn } from "@/lib/utils"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { Toaster } from "@/components/ui/toaster"
 import Script from 'next/script'
+import { ThemeProvider } from "@/components/theme-provider"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -77,16 +78,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="en"
-      className={cn(
-        "bg-white font-sans text-slate-900 antialiased",
-        fontSans.variable
-      )}
+      suppressHydrationWarning
     >
       <head />
-      <body className="min-h-screen">
-        {children}
-        <Toaster />
-        <TailwindIndicator />
+      <body className={cn(
+        "min-h-screen bg-background font-sans antialiased",
+        fontSans.variable
+      )}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <Toaster />
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
       <Script async defer data-website-id="a762aae4-2cae-4313-8b28-6a6f786c2124" src="https://analytics.fonti.dev/umami.js" strategy="lazyOnload" />
     </html>

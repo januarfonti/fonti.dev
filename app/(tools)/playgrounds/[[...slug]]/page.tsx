@@ -92,7 +92,7 @@ export default async function PlaygroundPage({ params }: PlaygroundPageProps) {
       <div className="mx-auto w-full min-w-0">
         <PlaygroundsPageHeader heading={playground.title} text={playground.description} />
         <Mdx code={playground.body.code} />
-        <hr className="my-4 border-slate-200 md:my-6" />
+        <hr className="my-4 md:my-6" />
         <PlaygroundsPager playground={playground} />
       </div>
       <div className="hidden text-sm xl:block">

@@ -93,21 +93,21 @@ export default async function PostPage({ params }: PostPageProps) {
   )
 
   return (
-    <article className="container relative max-w-3xl py-6 lg:py-10">
+    <article className="container relative max-w-5xl py-6 lg:py-10">
       <Link
         href="/blog"
-        className="absolute top-14 left-[-200px] hidden items-center justify-center text-sm font-medium text-slate-600 hover:text-slate-900 xl:inline-flex"
+        className="absolute left-[-185px] hidden items-center justify-center text-sm font-medium xl:inline-flex"
       >
         <Icons.chevronLeft className="mr-2 h-4 w-4" />
         See all posts
       </Link>
       <div>
         {post.date && (
-          <time dateTime={post.date} className="block text-sm text-slate-600">
+          <time dateTime={post.date} className="block text-sm text-muted-foreground">
             Published on {formatDate(post.date)}
           </time>
         )}
-        <h1 className="mt-2 inline-block text-4xl font-extrabold leading-tight text-slate-900 lg:text-5xl">
+        <h1 className="mt-2 inline-block text-4xl font-extrabold leading-tight lg:text-5xl">
           {post.title}
         </h1>
         {authors?.length ? (
@@ -127,8 +127,8 @@ export default async function PostPage({ params }: PostPageProps) {
                     className="rounded-full"
                   />
                   <div className="flex-1 text-left leading-tight">
-                    <p className="font-medium text-slate-900">{author.title}</p>
-                    <p className="text-[12px] text-slate-600">
+                    <p className="font-medium text-muted-foreground">{author.title}</p>
+                    <p className="text-xs text-muted-foreground">
                       @{author.twitter}
                     </p>
                   </div>
@@ -149,13 +149,13 @@ export default async function PostPage({ params }: PostPageProps) {
         />
       )}
       <Mdx code={post.body.code} />
-      <hr className="my-4 border-slate-200" />
+      <hr className="my-4" />
       <GiscusComment />
-      <hr className="my-4 border-slate-200" />
+      <hr className="my-4" />
       <div className="flex justify-center py-6 lg:py-10">
         <Link
           href="/blog"
-          className="inline-flex items-center justify-center text-sm font-medium text-slate-600 hover:text-slate-900"
+          className="inline-flex items-center justify-center text-sm font-medium"
         >
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           See all posts

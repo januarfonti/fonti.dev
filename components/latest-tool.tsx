@@ -17,15 +17,15 @@ function LatestTool() {
   return (
     <>
       {posts?.length ? (
-        <section className="grid gap-10 sm:grid-cols-2 md:max-w-[52rem]">
+        <section className="grid gap-10 sm:grid-cols-3">
           {posts.map((post, index) => (
             <Link href={post.slug} key={post._id} className='umami--click--tools-detail-link'>
               <article
-                className="group relative flex flex-col space-y-2 rounded-md border border-slate-200 p-6 transition-colors hover:border-slate-900"
+                className="group relative flex flex-col space-y-2 rounded-md border p-6 transition-colors hover:border-slate-900"
               >
                 <h2 className="text-xl font-extrabold md:text-2xl">{post.title}</h2>
                 {post.description && (
-                  <p className="text-slate-600">{post.description}</p>
+                  <p className="text-muted-foreground">{post.description}</p>
                 )}
               </article>
             </Link>

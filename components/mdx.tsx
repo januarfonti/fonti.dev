@@ -21,7 +21,7 @@ const components = {
   h2: ({ className, ...props }) => (
     <h2
       className={cn(
-        "mt-10 scroll-m-20 border-b border-b-slate-200 pb-1 text-3xl font-semibold tracking-tight first:mt-0",
+        "mt-10 scroll-m-20 border-b pb-1 text-3xl font-semibold tracking-tight first:mt-0",
         className
       )}
       {...props}
@@ -66,7 +66,7 @@ const components = {
   a: ({ className, ...props }) => (
     <a
       className={cn(
-        "font-medium text-slate-900 underline underline-offset-4",
+        "font-medium text-primary underline underline-offset-4",
         className
       )}
       {...props}
@@ -109,7 +109,7 @@ const components = {
     />
   ),
   hr: ({ ...props }) => (
-    <hr className="my-4 border-slate-200 md:my-8" {...props} />
+    <hr className="my-4 md:my-8" {...props} />
   ),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">
@@ -155,7 +155,7 @@ const components = {
   code: ({ className, ...props }) => (
     <code
       className={cn(
-        "relative rounded border bg-slate-300/25 py-[0.2rem] px-[0.3rem] font-mono text-sm text-slate-600",
+        "relative rounded border bg-primary/25 py-[0.2rem] px-[0.3rem] font-mono text-sm ",
         className
       )}
       {...props}

@@ -49,7 +49,7 @@ export function PlaygroundsSidebarNavItems({
               "flex w-full items-center rounded-md p-2 hover:underline",
               item.disabled && "cursor-not-allowed opacity-60",
               {
-                "bg-slate-100": pathname === item.href,
+                "bg-accent": pathname === item.href,
               }
             )}
             target={item.external ? "_blank" : ""}
