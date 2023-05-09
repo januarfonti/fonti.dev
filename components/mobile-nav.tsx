@@ -27,8 +27,10 @@ export function MobileNav({ items, handleShowMobileMenu, children }: MobileNavPr
         <Link href="/" className="flex items-center space-x-2" onClick={handleShowMobileMenu}>
           {theme === "dark" ? (
             <Icons.logoDark className="h-6 w-6" />
-          ) : (
+          ) : theme === "light" ? (
             <Icons.logo className="h-6 w-6" />
+          ) : (
+            <Icons.logoDark className="h-6 w-6" />
           )}
           <span className="font-bold">{siteConfig.name}</span>
       </Link>

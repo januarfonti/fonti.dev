@@ -8,6 +8,8 @@ import LatestTool from "@/components/latest-tool"
 import { allPosts } from "contentlayer/generated"
 import { compareDesc } from "date-fns"
 import { PostItem } from "@/components/post-item"
+import { formatDate } from "@/lib/utils"
+import Image from "next/image"
 
 export default async function IndexPage() {
   const posts = allPosts
@@ -48,7 +50,33 @@ export default async function IndexPage() {
         {posts?.length ? (
         <section className="grid gap-10 sm:grid-cols-3">
           {posts.map((post, index) => (
-            <PostItem key={post.slug} post={post} index={index} />
+            <article
+              key={post._id}
+              className="group relative flex flex-col space-y-2"
+            >
+              {post.image && (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  width={804}
+                  height={452}
+                  className="rounded-md border border-slate-200 bg-slate-200 transition-colors group-hover:border-slate-900"
+                  priority={index <= 1}
+                />
+              )}
+              <h2 className="text-2xl font-extrabold">{post.title}</h2>
+              {post.description && (
+                <p className="text-muted-foreground">{post.description}</p>
+              )}
+              {post.date && (
+                <p className="text-sm text-muted-foreground">
+                  {formatDate(post.date)}
+                </p>
+              )}
+              <Link href={post.slug} className="absolute inset-0">
+                <span className="sr-only">View Article</span>
+              </Link>
+            </article>
           ))}
         </section>
       ) : (
