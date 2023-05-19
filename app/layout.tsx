@@ -92,7 +92,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <TailwindIndicator />
         </ThemeProvider>
       </body>
-      <Script async defer data-website-id="a762aae4-2cae-4313-8b28-6a6f786c2124" src="https://analytics.fonti.dev/umami.js" strategy="lazyOnload" />
+      <Script async src="https://analytics.fonti.dev/script.js" data-website-id="408c3514-f670-41be-96e3-7dad54c9a375" strategy="lazyOnload" />
     </html>
   )
 }
