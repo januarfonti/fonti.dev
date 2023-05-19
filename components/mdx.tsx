@@ -8,6 +8,10 @@ import { Card } from "@/components/card"
 import { TextConverter } from "@/components/playground/text-converter"
 import { SocialMediaEmbed } from "@/components/social-media-embed"
 
+function RoundedImage(props) {
+  return <Image alt={props.alt} className="mx-auto my-6 rounded-lg" {...props} />;
+}
+
 const components = {
   h1: ({ className, ...props }) => (
     <h1
@@ -161,7 +165,7 @@ const components = {
       {...props}
     />
   ),
-  Image,
+  Image: RoundedImage,
   Callout,
   Card,
   TextConverter,
