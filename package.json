@@ -15,6 +15,8 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^6.1.8",
+    "@codemirror/view": "^6.12.0",
     "@giscus/react": "^2.2.8",
     "@hookform/resolvers": "^2.9.10",
     "@prisma/client": "^4.11.0",
@@ -46,6 +48,10 @@
     "@radix-ui/react-toggle": "^1.0.1",
     "@radix-ui/react-toggle-group": "^1.0.1",
     "@radix-ui/react-tooltip": "^1.0.3",
+    "@uiw/codemirror-theme-dracula": "^4.20.2",
+    "@uiw/codemirror-theme-github": "^4.20.2",
+    "@uiw/codemirror-theme-okaidia": "^4.20.2",
+    "@uiw/react-codemirror": "^4.20.2",
     "@vercel/og": "^0.0.21",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",

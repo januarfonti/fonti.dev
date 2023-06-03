@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { Callout } from "@/components/callout"
 import { Card } from "@/components/card"
 import { TextConverter } from "@/components/playground/text-converter"
+import { JSONFormatter } from "@/components/playground/json-formatter"
 import { SocialMediaEmbed } from "@/components/social-media-embed"
 
 function RoundedImage(props) {
@@ -169,6 +170,7 @@ const components = {
   Callout,
   Card,
   TextConverter,
+  JSONFormatter,
   SocialMediaEmbed
 }
 
