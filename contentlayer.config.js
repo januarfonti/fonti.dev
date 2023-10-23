@@ -77,6 +77,47 @@ export const Post = defineDocumentType(() => ({
   computedFields,
 }))
 
+export const Portofolio = defineDocumentType(() => ({
+  name: "Portofolio",
+  filePathPattern: `portofolio/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+    },
+    date: {
+      type: "date",
+      required: true,
+    },
+    published: {
+      type: "boolean",
+      default: true,
+    },
+    image: {
+      type: "string",
+      required: true,
+    },
+    github: {
+      type: "string",
+      required: false,
+    },
+    url: {
+      type: "string",
+      required: false,
+    },
+    authors: {
+      type: "list",
+      of: { type: "string" },
+      required: true,
+    },
+  },
+  computedFields,
+}))
+
 export const Author = defineDocumentType(() => ({
   name: "Author",
   filePathPattern: `authors/**/*.mdx`,
@@ -119,7 +160,7 @@ export const Page = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Page, Playground, Post, Author],
+  documentTypes: [Page, Playground, Post, Author, Portofolio],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
