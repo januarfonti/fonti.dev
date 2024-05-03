@@ -6,6 +6,7 @@ import { GeistMono } from 'geist/font/mono';
 import { Navbar } from './components/nav';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fonti.dev'),
@@ -50,6 +51,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const nonce = headers().get('x-nonce')
   return (
     <html
       lang="en"
@@ -69,11 +71,7 @@ export default function RootLayout({
         </main>
         </div>
       </body>
-      { process.env.NODE_ENV === "production" && (
-        <>
-          <Script async src="https://analytics.fonti.dev/script.js" data-website-id="b8fd24ec-7dde-471c-baab-689acfd0b9a7" strategy="lazyOnload" />
-        </>
-      )}
+      <Script async src="https://analytics.fonti.dev/script.js" data-website-id="b8fd24ec-7dde-471c-baab-689acfd0b9a7" nonce={nonce || ''} />
     </html>
   );
 }
