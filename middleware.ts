@@ -4,7 +4,7 @@ export function middleware(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
   const cspHeader = `
     default-src 'self';
-    script-src https://fonti.dev https://analytics.fonti.dev *.fonti.dev 'nonce-${nonce}' 'strict-dynamic';
+    script-src https://fonti.dev https://analytics.fonti.dev https://analytics.fonti.dev/api/send *.fonti.dev;
     style-src 'self' 'nonce-${nonce}';
     img-src 'self' blob: data:;
     font-src 'self';
