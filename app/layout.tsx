@@ -69,6 +69,11 @@ export default function RootLayout({
         </main>
         </div>
       </body>
+      { process.env.NODE_ENV === "production" && (
+        <>
+          <Script async src="https://analytics.fonti.dev/script.js" data-website-id="b8fd24ec-7dde-471c-baab-689acfd0b9a7" strategy="lazyOnload" />
+        </>
+      )}
     </html>
   );
 }
