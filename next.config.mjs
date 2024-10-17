@@ -4,6 +4,7 @@ const nextConfig = {
   // experimental: {
   //   ppr: true,
   // },
+  transpilePackages: ['next-mdx-remote'],
   async redirects() {
     const { rows: redirects } = await sql`
       SELECT source, destination, permanent
