@@ -1,0 +1,104 @@
+---
+title: 'Using OpenCommit to Automate and Improve Git Commit Messages'
+description: 'Explore how OpenCommit can transform your coding process by automating and enhancing your Git commit messages. Discover the benefits of this AI-powered tool and how to set it up in a breeze.'
+date: 2023-05-20
+image: /blog/opencommit/opencommit.png
+authors: ['Januar Fonti']
+tags: ['AI', 'git']
+---
+
+Hey there, fellow coder! Let's chat about one of the lesser-loved parts of the coding process - writing those pesky git commit messages. You're neck-deep in your latest code masterpiece, the creative juices are flowing, but then you have to pause, switch gears, and write a commit message that makes sense. Talk about a mood killer, right?
+
+But what if I told you there's a handy little tool that can do the hard work for you? Meet <a href="https://github.com/di-sukharev/opencommit" target="_blank" className="underline underline-offset-4">OpenCommit</a> - your new secret weapon against boring commit messages!
+
+<img
+  alt={`OpenCommit Preview`}
+  src={`/blog/opencommit/opencommit-preview.png`}
+  width={3840 / 3}
+  height={2160 / 3}
+/>
+
+## Getting Set Up with OpenCommit
+
+Before you get to enjoy the perks of OpenCommit, you've got to get it set up. But don't worry - it's a walk in the park.
+
+First things first, install OpenCommit globally with npm by whipping out this command:
+
+```bash
+npm install -g opencommit
+```
+
+After you've got OpenCommit installed, you'll need to connect it with your OpenAI account. Simply grab your API key from OpenAI and feed it to OpenCommit:
+
+```bash
+opencommit config set OPENAI_API_KEY=<your_api_key>
+```
+
+Just remember, your API key is stashed away locally in a `~/.opencommit` config file.
+
+## How to Use OpenCommit
+
+Now for the fun part - using OpenCommit. Whenever I'm in the zone and need to make a commit, I stage my changes using `git add`:
+
+```bash
+git add <files...>
+```
+
+or
+
+```bash
+git add .
+```
+
+Then, I let OpenCommit take the wheel:
+
+```bash
+opencommit
+```
+
+Or if you're more of a shortcut kind of person, you can use the oc command:
+  
+```bash
+oc
+```
+
+Seriously, it's as easy as pie!
+
+## Jazzing Up OpenCommit
+
+And because one size doesn't always fit all, you can tweak OpenCommit to fit your unique style.
+
+### Switching Up the AI Model
+By default, OpenCommit uses the GPT-3.5-turbo model (or ChatGPT for the cool kids). But if you're feeling adventurous, you can give the more powerful GPT-4 model a spin:
+  
+```bash
+oc config set model=gpt-4
+```
+
+### Spice Up Your Commit Messages with Emojis
+
+Who doesn't love a good emoji, right? With OpenCommit, you can sprinkle some fun into your commit messages by adding emojis:
+
+```bash
+oc config set emoji=true
+```
+
+### Add Descriptions for Extra Clarity
+
+Want to make your commit messages crystal clear? Add descriptions of your changes:
+
+```bash
+oc config set description=true
+```
+
+### Speak Your Language
+
+OpenCommit also caters to different languages. You can pick the language for your commit messages. Let's say you want to set it to German:
+
+```bash
+oc config set language=de
+```
+
+## Time to Wrap Up
+
+So, there you have it - with OpenCommit, you'll never have to put your coding flow on pause to brainstorm a commit message. More time for the fun stuff, less time for the boring stuff. Just remember, you'll be footing the bill for your own requests to the OpenAI API. OpenCommit uses the ChatGPT (3.5-turbo) model, which is a cool ~15x cheaper than GPT-4. So why not give OpenCommit a whirl? Your commit messages will never be the same!
