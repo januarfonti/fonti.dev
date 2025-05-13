@@ -20,6 +20,9 @@ const navItems = {
   "/portfolio": {
     name: "Portfolio",
   },
+  "/products": {
+    name: "Products",
+  },
 };
 
 export function Navbar() {
@@ -28,7 +31,7 @@ export function Navbar() {
       <div className="lg:sticky lg:top-20">
         <LayoutGroup>
           <nav
-            className="flex flex-row items-center justify-between relative pb-0 fade md:overflow-auto scroll-pr-6 md:relative px-4 backdrop-filter backdrop-blur-xl bg-[#121212] bg-opacity-70 h-[50px]"
+            className="flex flex-row items-center justify-between relative pb-0 fade md:overflow-auto scroll-pr-6 md:relative px-4 backdrop-filter backdrop-blur-xl bg-[#262626] bg-opacity-70 h-[50px]"
             id="nav"
           >
             <div className="flex flex-row space-x-0 pr-10">

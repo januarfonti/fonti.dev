@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import Link from "next/link";
 export const metadata: Metadata = {
   title: "Work",
   description: "A summary of my work and contributions.",
@@ -22,15 +22,23 @@ export default function Page() {
           >
             Clearview
           </a>{" "}
-          as a Frontend Developer. I experienced in building web applications
+          as a Software Engineer. I experienced in building web applications
           using Vue.js, Nuxt.js, React.js, Next.js, and Tailwind CSS over the
           past 6+ years. For the backend, I&apos;m familiar with Node.js, PHP
           (Laravel), MySQL, and PostgreSQL.
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
-        <h2 className="font-medium text-xl mb-1 tracking-tighter">Clearview</h2>
+        <h2 className="font-medium text-xl mb-1 tracking-tighter">
+          <Link
+            href="https://clearview.team/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Clearview
+          </Link>
+        </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-          Full-stack Developer, May 2018 - present
+          Software Engineer, May 2018 - present
         </p>
         <p>
           Clearview is a remote-first, distributed software company with team
@@ -43,7 +51,13 @@ export default function Page() {
         </p>
         <hr className="my-6 border-neutral-100 dark:border-neutral-800" />
         <h2 className="font-medium text-xl mb-1 tracking-tighter">
-          PT. Dutakom Wibawa Putra (D~NET)
+          <Link
+            href="https://dnetprovider.id/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PT. Dutakom Wibawa Putra (D~NET)
+          </Link>
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400 text-sm">
           Ruby on Rails Developer, Dec 2016 - May 2018
