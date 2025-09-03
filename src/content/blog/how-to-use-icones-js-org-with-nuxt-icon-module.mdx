@@ -1,0 +1,71 @@
+---
+title: 'How To Use Icones.js.org with Nuxt Icon Module'
+description: 'If you're looking for a library of open-source SVG icons for your Nuxt 3 project, you should check out https://icones.js.org/'
+date: '2023-04-13'
+image: '/blog/series-a.png'
+authors: ['Januar Fonti']
+tags: ['nuxt', 'icons', 'tutorial']
+---
+
+If you're looking for a library of open-source SVG icons for your Nuxt 3 project, you should check out https://icones.js.org/. This library offers a wide variety of vector-based icons that you can easily customize to fit your needs. In this article, I'll show you how to use nuxt-icon with https://icones.js.org/ icons directly.
+
+## What is Icones.js.org?
+
+icones.js.org is a website that provides a collection of open-source icons in various formats, including SVG, React, Vue, and Angular components. The icons are designed to be easily customizable and can be used in web projects, mobile applications, or desktop software.
+
+The icon sets available on icones.js.org are created by different designers and are licensed under various open-source licenses, such as MIT, Apache, and Creative Commons. The website also provides tools for searching and filtering the icons by category, tags, or keywords, making it easy to find the right icon for a specific project.
+
+## Benefits of https://icones.js.org/
+
+One of the main benefits of using https://icones.js.org/ is the wide variety of icons it offers. The library has icons for various categories, including business, communication, design, development, finance, and more. You can easily search for the icon you need or browse the different categories to find the one that fits your project.
+
+Another benefit of https://icones.js.org/ is that all the icons are vector-based SVGs. This means you can easily customize the size, color, and other properties of the icons without losing quality. You can also use the icons in different contexts, such as on a website, in a mobile app, or in a desktop application.
+
+## How to use https://icones.js.org/ with Nuxt Icon Module
+
+The Nuxt Icon module allows you to easily add icons to your Nuxt 3 project. It supports both SVG and font-based icons, and you can easily customize the icons to fit your needs. In this article, we'll show you how to use the Nuxt Icon module with https://icones.js.org/ icons.
+
+### Step 1: Install the Nuxt Icon module
+
+To install the Nuxt Icon module, run the following command in your project directory:
+
+```bash
+npm install @nuxt/icon
+```
+
+### Step 2: Add the Nuxt Icon module to your nuxt.config.js file
+
+To add the Nuxt Icon module to your nuxt.config.js file, add the following code:
+
+```js
+export default {
+  buildModules: [
+    '@nuxt/icon'
+  ]
+}
+```
+
+### Step 3: Use the Nuxt Icon module in your project
+
+To use the Nuxt Icon module in your project, add the following code to your component:
+
+```html
+<template>
+  <div>
+    <nuxt-icon name="mdi:instagram" />
+  </div>
+</template>
+```
+
+In this example, I'm using the Instagram icon from the Material Design Icons library. You can find the list of available icons on https://icones.js.org/.
+
+<Image
+  alt={`Engagements`}
+  src={`/blog/icones/icones.gif`}
+  width={3840 / 3}
+  height={2160 / 3}
+/>
+
+## Conclusion
+
+In this article, I've shown you how to use the Nuxt Icon module with https://icones.js.org/ icons. If you're looking for a library of open-source SVG icons for your Nuxt 3 project, you should check out https://icones.js.org/. This library offers a wide variety of vector-based icons that you can easily customize to fit your needs.
