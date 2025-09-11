@@ -6,6 +6,7 @@ import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fonti.dev"),
@@ -81,6 +82,11 @@ export default function RootLayout({
             "fixed inset-0 opacity-30",
             "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] ",
           )}
+        />
+        <Script
+          src="https://analytics.fonti.dev/script.js"
+          data-website-id="f48667b1-44ca-4023-8655-2ae71fdf7886"
+          strategy="afterInteractive"
         />
       </body>
     </html>
