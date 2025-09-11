@@ -1,7 +1,5 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import ViewCounter from "@/components/view-counter";
-import { getViewsCount } from "@/db/queries";
 import formatDate from "@/lib/formatDate";
 import { ClockIcon } from "@radix-ui/react-icons";
 import { allPortfolios } from "content-collections";
@@ -9,7 +7,6 @@ import { Building2Icon } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
 
 const title = "Blog";
 const description = "Thoughts, ideas, and opinions.";
@@ -70,9 +67,6 @@ export default function Blog() {
                     <Building2Icon className="h-4 w-4" />
                     Work for {portfolio.company}
                   </span>
-                  <Suspense fallback={<p className="h-6" />}>
-                    <Views slug={portfolio.slug} />
-                  </Suspense>
                 </div>
                 {/* Show tech stack using Badge component */}
                 <div className="flex flex-wrap gap-2">
@@ -92,8 +86,3 @@ export default function Blog() {
   );
 }
 
-async function Views({ slug }: { slug: string }) {
-  const views = await getViewsCount();
-
-  return <ViewCounter allViews={views} slug={slug} />;
-}

@@ -1,13 +1,10 @@
 import { Card } from "@/components/ui/card";
-import ViewCounter from "@/components/view-counter";
-import { getViewsCount } from "@/db/queries";
 import formatDate from "@/lib/formatDate";
 import { ClockIcon } from "@radix-ui/react-icons";
 import { allPosts } from "content-collections";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense } from "react";
 
 const title = "Blog";
 const description = "Thoughts, ideas, and opinions.";
@@ -60,9 +57,6 @@ export default function Blog() {
                     <ClockIcon className="h-4 w-4" />
                     {post.readingTime}
                   </span>
-                  <Suspense fallback={<p className="h-6" />}>
-                    <Views slug={post.slug} />
-                  </Suspense>
                 </div>
                 <h2 className="line-clamp-2 text-xl font-medium mb-2 tracking-tight">
                   {post.title}
@@ -79,8 +73,3 @@ export default function Blog() {
   );
 }
 
-async function Views({ slug }: { slug: string }) {
-  const views = await getViewsCount();
-
-  return <ViewCounter allViews={views} slug={slug} />;
-}

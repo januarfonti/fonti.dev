@@ -1,12 +1,8 @@
 import { Mdx } from "@/components/mdx";
-import ViewCounter from "@/components/view-counter";
-import { increment } from "@/db/actions";
-import { getViewsCount } from "@/db/queries";
 import formatDate from "@/lib/formatDate";
 import {
   ArrowLeftIcon,
   CalendarIcon,
-  EyeOpenIcon,
   TimerIcon,
 } from "@radix-ui/react-icons";
 import { allPosts } from "content-collections";
@@ -14,8 +10,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { cache } from "react";
-import { Suspense } from "react";
 import Balancer from "react-wrap-balancer";
 import type { BlogPosting, WithContext } from "schema-dts";
 
@@ -94,9 +88,6 @@ export default async function BlogPost({ params }: BlogPostProperties) {
               <CalendarIcon className="mr-1" />
               {formatDate(page.date)}
             </p>
-            <Suspense fallback={<p className="h-5" />}>
-              <Views slug={page.slug} />
-            </Suspense>
             <p className="flex items-center text-sm text-neutral-600 dark:text-neutral-400">
               <TimerIcon className="mr-1" />
               {page.readingTime}
@@ -126,10 +117,3 @@ export default async function BlogPost({ params }: BlogPostProperties) {
   );
 }
 
-const incrementViews = cache(increment);
-
-async function Views({ slug }: { slug: string }) {
-  const views = await getViewsCount();
-  incrementViews(slug);
-  return <ViewCounter allViews={views} slug={slug} />;
-}

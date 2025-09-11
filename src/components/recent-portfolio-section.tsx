@@ -1,10 +1,7 @@
-import { getViewsCount } from "@/db/queries";
 import formatDate from "@/lib/formatDate";
 import { allPortfolios } from "content-collections";
 import Link from "next/link";
-import { Suspense } from "react";
 import { Badge } from "./ui/badge";
-import ViewCounter from "./view-counter";
 
 export default function RecentPortfolioSection() {
   // Only show 3 portfolios and sort them by date
@@ -38,11 +35,7 @@ export default function RecentPortfolioSection() {
               </p>
               <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400 mb-2">
                 <span>{formatDate(portfolio.date, "short")}</span>
-                <span>•</span>
-                <Suspense fallback={<p className="h-6" />}>
-                  <Views slug={portfolio.slug} />
-                </Suspense>
-                <span>•</span>
+•
                 <span>Work for {portfolio.company}</span>
               </div>
               {/* Show tech stack using Badge component */}
@@ -61,8 +54,3 @@ export default function RecentPortfolioSection() {
   );
 }
 
-async function Views({ slug }: { slug: string }) {
-  const views = await getViewsCount();
-
-  return <ViewCounter allViews={views} slug={slug} />;
-}

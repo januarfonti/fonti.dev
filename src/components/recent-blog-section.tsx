@@ -1,9 +1,6 @@
-import { getViewsCount } from "@/db/queries";
 import formatDate from "@/lib/formatDate";
 import { allPosts } from "content-collections";
 import Link from "next/link";
-import { Suspense } from "react";
-import ViewCounter from "./view-counter";
 
 export default function RecentBlogSection() {
   // Only show 3 posts and sort them by date
@@ -37,10 +34,6 @@ export default function RecentBlogSection() {
               </p>
               <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
                 <span>{formatDate(post.date, "short")}</span>
-                <span>•</span>
-                <Suspense fallback={<p className="h-6" />}>
-                  <Views slug={post.slug} />
-                </Suspense>
               </div>
             </div>
           </Link>
@@ -50,8 +43,3 @@ export default function RecentBlogSection() {
   );
 }
 
-async function Views({ slug }: { slug: string }) {
-  const views = await getViewsCount();
-
-  return <ViewCounter allViews={views} slug={slug} />;
-}
