@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function HeroSection() {
   return (
     <section className="prose prose-neutral dark:prose-invert">
@@ -5,13 +7,13 @@ export default function HeroSection() {
         Hey there! I'm a Software Engineer from Malang, Indonesia, with over a
         decade of experience crafting digital solutions. Currently, I'm part of
         the team at{" "}
-        <a
-          href="https:/clearview.team/"
+        <Link
+          href="https://clearview.team/"
           target="_blank"
           rel="noopener noreferrer"
         >
           Clearview
-        </a>
+        </Link>
         , where I get to build things that make a real difference in people's
         lives.
       </p>
