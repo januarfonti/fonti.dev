@@ -2,6 +2,15 @@ import links from "@/data/links.json";
 import type { Metadata } from "next";
 import { LinksSearch } from "./links-search";
 
+interface LinkItem {
+  title: string;
+  description: string;
+  date: string;
+  image: string;
+  category: string;
+  url: string;
+}
+
 const title = "Products that I love";
 const description = "Here's a list of products that I use and recommend.";
 
@@ -11,10 +20,11 @@ export const metadata: Metadata = {
 };
 
 export default function Links() {
-  // sort all links by date
-  const sortedLinks = links.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
+  // Type the imported links and sort all links by date (only if links exist)
+  const typedLinks = links as LinkItem[];
+  const sortedLinks = typedLinks.length > 0 
+    ? typedLinks.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    : [];
 
   return (
     <div className="relative pt-[50px]">
