@@ -20,9 +20,6 @@ const navItems = {
   "/portfolio": {
     name: "Portfolio",
   },
-  "/products": {
-    name: "Products",
-  },
 };
 
 export function Navbar() {
