@@ -30,9 +30,8 @@ COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.ts ./
 COPY --from=builder /app/package.json ./
 
-# Copy content-collections if exists (for @content-collections/next)
-COPY --from=builder /app/.content-collections ./.content-collections 2>/dev/null || true
-COPY --from=builder /app/content-collections.ts ./content-collections.ts 2>/dev/null || true
+# Copy content-collections configuration
+COPY content-collections.ts ./
 
 # Set environment to production
 ENV NODE_ENV=production
