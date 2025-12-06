@@ -8,6 +8,7 @@ import {
 } from "fumadocs-core/mdx-plugins";
 import readingTime from "reading-time";
 import { sqip } from "sqip";
+import { z } from "zod";
 
 const rehypeCodeOptions: RehypeCodeOptions = {
   themes: {
@@ -20,7 +21,7 @@ const posts = defineCollection({
   name: "posts",
   directory: "src/content/blog",
   include: "**/*.mdx",
-  schema: (z) => ({
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.string(),
@@ -65,7 +66,7 @@ const portfolios = defineCollection({
   name: "portfolios",
   directory: "src/content/portfolio",
   include: "**/*.mdx",
-  schema: (z) => ({
+  schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.string(),
